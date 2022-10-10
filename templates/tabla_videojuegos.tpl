@@ -1,7 +1,8 @@
+{include file="templates/header.tpl"}
 <table>
-	{foreach from=$videojuegos item=$videojuego}
-		<tr>
+	{foreach $videojuegos as $videojuego}
+		<ul>
             <li><a href="detallejuego/{$videojuego->id}">{$videojuego->nombre}</a></li>
-        </tr>
+        </ul>
     {/foreach}
 </table>

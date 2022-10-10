@@ -1,6 +1,7 @@
 <?php
 require_once "./model/VideojuegoModelo.php";
 require_once "./view/VideojuegoVista.php";
+require_once "./helpers/AdministradorHelper.php";
 
 class VideojuegoController{
     private $model; 
@@ -9,6 +10,9 @@ class VideojuegoController{
     function __construct(){
         $this->model = new VideojuegoModelo();
         $this->view = new VideojuegoVista();
+
+        $authHelper = new AuthHelper();
+        $authHelper->VerificarLogueado();
     }
 
     function MostrarVideojuegos(){
@@ -20,4 +24,10 @@ class VideojuegoController{
         $juego = $this->model->GetVideojuego($videojuego);  
         $this->view->MostrarVideojuego($juego);
     }
+
+    function VideojuegosPorGenero($id_genero){
+        $videojuegosporgenero = $this->model->ConseguirVideojuegosPorGenero($id_genero);
+        $this->view->MostrarVideojuegoPorGenero($videojuegosporgenero);
+    }
+
 }

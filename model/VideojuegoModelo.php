@@ -20,6 +20,14 @@ class VideojuegoModelo{
         return $videojuegos;
     }
 
+    function ConseguirVideojuegosPorGenero($id_genero){
+        $sentencia = $this->db->prepare("SELECT * FROM videojuego WHERE id_genero = ?");
+        $sentencia->execute(array($id_genero));
+        $videojuegoporgenero = $sentencia->fetchall(PDO::FETCH_OBJ);
+
+        return $videojuegoporgenero;
+    }
+
     function GetVideojuego($videojuego){
         $sentencia = $this->db->prepare("SELECT * FROM videojuego WHERE id = ?");
         $sentencia->execute(array($videojuego));

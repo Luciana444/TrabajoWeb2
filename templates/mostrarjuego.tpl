@@ -1,5 +1,5 @@
-{include file="templates/header.tpl"}
-<p><a href='../videojuego'>{$volver}</a></p>
+{{include file="templates/header.tpl"}}
+<p><a href='/web2/videojuego'>{$volver}</a></p>
 <table class="table">
   <tbody>
     <tr>

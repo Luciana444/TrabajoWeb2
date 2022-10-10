@@ -1,6 +1,7 @@
 <?php
 require_once "./model/GenerosModelo.php";
 require_once "./view/GenerosVista.php";
+require_once "./helpers/AdministradorHelper.php";
 
 class GenerosController{
     private $model; 
@@ -9,6 +10,9 @@ class GenerosController{
     function __construct(){
         $this->model = new GenerosModelo();
         $this->view = new GenerosVista();
+
+        $authHelper = new AuthHelper();
+        $authHelper->VerificarLogueado();   
     }
 
     function MostrarGeneros(){
@@ -16,8 +20,8 @@ class GenerosController{
        $this->view->MostrarGeneros($generos);
     }
 
-    function VideojuegosByGenre($genero){
-        $videojuegosporgenero = $this->model->GetGenero($genero);
+    function VideojuegosPorGenero($genero){
+        $videojuegosporgenero = $this->model->GetVideojuegos($genero);
         $this->view->MostrarVideojuegoPorGenero($videojuegosporgenero);
     }
 }
