@@ -41,7 +41,7 @@ class VideojuegoModelo{
     }
 
     function EliminarVideojuego($id){
-        $sentencia =  $this->db->prepare("DELETE FROM generos WHERE id = ?");
+        $sentencia =  $this->db->prepare("DELETE FROM videojuego WHERE id_genero = ?");
         $sentencia->execute(array($id));
     }
 

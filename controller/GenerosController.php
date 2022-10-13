@@ -9,10 +9,10 @@ class GenerosController{
 
     function __construct(){
         $this->model = new GenerosModelo();
-        $this->view = new GenerosVista();
+        $this->view = new GenerosVista();  
 
         $authHelper = new AuthHelper();
-        $authHelper->VerificarLogueado();   
+        $authHelper->VerificarLogueado();
     }
 
     function MostrarGeneros(){
@@ -23,5 +23,15 @@ class GenerosController{
     function VideojuegosPorGenero($genero){
         $videojuegosporgenero = $this->model->GetVideojuegos($genero);
         $this->view->MostrarVideojuegoPorGenero($videojuegosporgenero);
+    }
+
+    function AgregarGenero(){
+        $genero = $_POST['genero'];
+        $fechadelanzamiento = $_POST['fechadelanzamiento'];
+        $descripcion = $_POST['descripcion'];
+        $caracteristica = $_POST['caracteristica'];
+        var_dump($genero);
+        $this->model->AgregarGenero($genero,$fechadelanzamiento,$descripcion,$caracteristica);
+        header("location:" . BASE_URL);
     }
 }

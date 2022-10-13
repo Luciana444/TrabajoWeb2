@@ -30,4 +30,14 @@ class VideojuegoController{
         $this->view->MostrarVideojuegoPorGenero($videojuegosporgenero);
     }
 
+    function BorrarVideojuego($id){
+        $this->model->EliminarVideojuego($id);
+        header("location:" . BASE_URL . "videojuego");
+    }
+
+    function AgregarVideojuego(){
+        $videojuego = $_POST['videojuego'];
+        $this->model->AgregarVideojuego($videojuego);
+        header("location:" . BASE_URL . "videojuego");
+    }
 }
