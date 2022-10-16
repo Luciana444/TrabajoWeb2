@@ -2,16 +2,20 @@
 require_once "libreria/smarty-4.2.1/libs/Smarty.class.php";
 
 
-class VideojuegoVista{
+class VideojuegosVista{
     private $smarty;
 
     function __construct(){
       $this->smarty = new Smarty();
     }
 
-    function MostrarVideojuegos($videojuegos){
-      $this->smarty->assign('titulo',"Generos");
+    function MostrarVideojuegos($videojuegos, $generos){
+      $this->smarty->assign('titulo',"Videojuegos");
+      $this->smarty->assign('seccion', 'videojuegos');
+      $this->smarty->assign('borrado', 'borrado');
       $this->smarty->assign('videojuegos', $videojuegos);
+      $this->smarty->assign('generos',$generos);
+      $this->smarty->assign('inicio',"inicio");
       $this->smarty->display('templates/tabla_videojuegos.tpl');
   }
 
@@ -22,6 +26,10 @@ class VideojuegoVista{
   }
 
   function MostrarVideojuegoPorGenero($videojuegosporgenero){
+    $this->smarty->assign('titulo',"Videojuego");
+    $this->smarty->assign('seccion','genero');
+    $this->smarty->assign('borrado', 'noborrado');
+    $this->smarty->assign('inicio',"inicio");
     $this->smarty->assign('videojuegos', $videojuegosporgenero);
     $this->smarty->display('templates/tabla_videojuegos.tpl');
   }

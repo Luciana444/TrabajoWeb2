@@ -27,13 +27,13 @@ class GenerosModelo{
         $sentencia->execute(array($genero));
     }
 
-    function EliminarGenero($id){
-        $sentencia =  $this->db->prepare("DELETE FROM generos WHERE id = ?");
-        $sentencia->execute(array($id));
+    function EliminarGenero($id_genero){
+        $sentencia =  $this->db->prepare("DELETE FROM generos WHERE id_genero = ?");
+        $sentencia->execute(array($id_genero));
     }
 
-    function ActualizarGenero($genero, $id){
-        $sentencia =  $this->db->prepare("UPDATE generos SET genero = ? WHERE id = ?");
-        $sentencia->execute(array($genero, $id));
+    function ActualizarGenero($genero, $id_genero){
+        $sentencia =  $this->db->prepare("UPDATE generos SET genero = ? WHERE id_genero = ?");
+        $sentencia->execute(array($genero, $id_genero));
     }
 }

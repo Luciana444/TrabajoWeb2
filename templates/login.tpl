@@ -9,13 +9,10 @@
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" class="form-control" name="password">
   </div>
-  {if $error} 
+  {if $error}
     <div class="alert alert-danger mt-3">
-        {$error}
+      {$error}
     </div>
   {/if}
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
-
-
-

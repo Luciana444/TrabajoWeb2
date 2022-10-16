@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-10 23:13:50
+/* Smarty version 4.2.1, created on 2022-10-16 04:52:24
   from 'C:\xampp\htdocs\web2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63448b0e421e98_81083350',
+  'unifunc' => 'content_634b71e84e5117_83384816',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b7813dff1baf40d1de9a641e58798223a0264454' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\templates\\header.tpl',
-      1 => 1665436427,
+      1 => 1665888711,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63448b0e421e98_81083350 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634b71e84e5117_83384816 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
     <base href="<?php echo BASE_URL;?>
 ">
@@ -41,11 +41,12 @@ function content_63448b0e421e98_81083350 (Smarty_Internal_Template $_smarty_tpl)
                     </li>
                     <?php if (!(isset($_SESSION['USER_ID']))) {?>
                         <li class="nav-item">
-                          <a class="nav-link" aria-current="page" href="/web2/ingresar">ingresar</a>
+                            <a class="nav-link" aria-current="page" href="/web2/ingresar">ingresar</a>
                         </li>
-                      <?php } else { ?> 
+                    <?php } else { ?>
                         <li class="nav-item ml-auto">
-                          <a class="nav-link" aria-current="page" href="cerrarsesion">Cerrar Sesion (<?php echo $_SESSION['USER_EMAIL'];?>
+                            <a class="nav-link" aria-current="page" href="cerrarsesion">Cerrar Sesion
+                                (<?php echo $_SESSION['USER_EMAIL'];?>
 )</a>
                         </li>
                     <?php }?>

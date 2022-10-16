@@ -17,11 +17,12 @@
                     </li>
                     {if !isset($smarty.session.USER_ID)}
                         <li class="nav-item">
-                          <a class="nav-link" aria-current="page" href="/web2/ingresar">ingresar</a>
+                            <a class="nav-link" aria-current="page" href="/web2/ingresar">ingresar</a>
                         </li>
-                      {else} 
+                    {else}
                         <li class="nav-item ml-auto">
-                          <a class="nav-link" aria-current="page" href="cerrarsesion">Cerrar Sesion ({$smarty.session.USER_EMAIL})</a>
+                            <a class="nav-link" aria-current="page" href="cerrarsesion">Cerrar Sesion
+                                ({$smarty.session.USER_EMAIL})</a>
                         </li>
                     {/if}
                 </ul>

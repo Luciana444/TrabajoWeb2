@@ -8,15 +8,15 @@ class GenerosVista{
         $this->smarty = new Smarty();
     }
 
-    function MostrarGeneros($generos){
+    function MostrarGeneros($generos,$videojuegos){
         $this->smarty->assign('titulo',"Generos");
-        $this->smarty->assign('generos', $generos);
+        $this->smarty->assign('generos', $generos); 
+        $this->smarty->assign('videojuegos', $videojuegos);
         $this->smarty->display('templates/tabla_generos.tpl');
     }   
 
-    function MostrarVideojuegoPorGenero($videojuegosporgenero){
-        $this->smarty->assign('videojuegosporgenero',$videojuegosporgenero);
-        $this->smarty->assign('volver','Volver');
-        $this->smarty->display('templates/videojuegosporgenero.tpl');
+    function error($error){
+        $this->smarty->assign('error', $error);
+        $this->smarty->display('templates/error.tpl');
     }
 }

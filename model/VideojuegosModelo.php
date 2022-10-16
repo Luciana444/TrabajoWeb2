@@ -1,6 +1,6 @@
 <?php
 
-class VideojuegoModelo{
+class VideojuegosModelo{
     private $db;
 
     function __construct(){
@@ -8,7 +8,7 @@ class VideojuegoModelo{
     }
 
     function GetVideojuegos(){
-        $sentencia = $this->db->prepare("SELECT * FROM videojuego");
+        $sentencia = $this->db->prepare("SELECT * FROM videojuegos");
         $sentencia->execute();
         $videojuegos = $sentencia->fetchAll(PDO::FETCH_OBJ);
         foreach($videojuegos as $videojuego){
@@ -21,7 +21,7 @@ class VideojuegoModelo{
     }
 
     function ConseguirVideojuegosPorGenero($id_genero){
-        $sentencia = $this->db->prepare("SELECT * FROM videojuego WHERE id_genero = ?");
+        $sentencia = $this->db->prepare("SELECT * FROM videojuegos WHERE id_genero = ?");
         $sentencia->execute(array($id_genero));
         $videojuegoporgenero = $sentencia->fetchall(PDO::FETCH_OBJ);
 
@@ -29,24 +29,24 @@ class VideojuegoModelo{
     }
 
     function GetVideojuego($videojuego){
-        $sentencia = $this->db->prepare("SELECT * FROM videojuego WHERE id = ?");
+        $sentencia = $this->db->prepare("SELECT * FROM videojuegos WHERE id = ?");
         $sentencia->execute(array($videojuego));
         $Videojuego = $sentencia->fetch(PDO::FETCH_OBJ);
         return $Videojuego;
     }
 
-    function AgregarVideojuego($videojuego){
-        $sentencia = $this->db->prepare("INSERT INTO videojuego (nombre) VALUES (?)");
-        $sentencia->execute(array($videojuego));
+    function AgregarVideojuego($videojuego,$fechadelanzamiento,$descripcion,$caracteristica,$id_genero){
+        $sentencia = $this->db->prepare("INSERT INTO videojuegos (nombre,fecha_de_lanzamiento,descripcion,caracteristica,id_genero) VALUES (?,?,?,?,?)");
+        $sentencia->execute(array($videojuego,$fechadelanzamiento,$descripcion,$caracteristica,$id_genero));
     }
 
     function EliminarVideojuego($id){
-        $sentencia =  $this->db->prepare("DELETE FROM videojuego WHERE id_genero = ?");
+        $sentencia =  $this->db->prepare("DELETE FROM videojuegos WHERE id = ?");
         $sentencia->execute(array($id));
     }
 
-    function ActualizarVideojuego($id,$nombre,$fecha_de_lanzamiento,$descripcion,$caracteristica,$id_genero){
-        $sentencia =  $this->db->prepare("UPDATE generos SET genero = ? WHERE id = ?");
-        $sentencia->execute(array($id,$nombre,$fecha_de_lanzamiento,$descripcion,$caracteristica,$id_genero));
+    function ActualizarVideojuego($nombre,$fecha_de_lanzamiento,$descripcion,$caracteristica,$id){
+        $sentencia =  $this->db->prepare("UPDATE videojuegos SET nombre = ?, fecha_de_lanzamiento = ?, descripcion = ?, caracteristica = ? WHERE id = ?");
+        $sentencia->execute(array($nombre,$fecha_de_lanzamiento,$descripcion,$caracteristica,$id));
     }
 }
