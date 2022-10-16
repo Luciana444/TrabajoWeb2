@@ -67,7 +67,7 @@ switch ($pageName) {
         break;
     case 'editargenero':
         $controllergeneros = new GenerosController();
-        $controllergeneros->EditarGenero($params[1]);
+        $controllergeneros->EditarGenero();
          break;
     case 'editarvideojuego':
         $controllervideojuegos = new VideojuegosController();

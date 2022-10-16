@@ -12,9 +12,9 @@ class VideojuegosModelo{
         $sentencia->execute();
         $videojuegos = $sentencia->fetchAll(PDO::FETCH_OBJ);
         foreach($videojuegos as $videojuego){
-            $query = $this->db->prepare('SELECT * FROM generos WHERE id_genero = ?');
-            $query->execute([$videojuego->id_genero]);
-            $genero = $query->fetch(PDO::FETCH_OBJ);
+            $sentencia = $this->db->prepare('SELECT * FROM generos WHERE id_genero = ?');
+            $sentencia->execute([$videojuego->id_genero]);
+            $genero = $sentencia->fetch(PDO::FETCH_OBJ);
             $videojuego->id_genero = $genero->genero;
         }
         return $videojuegos;

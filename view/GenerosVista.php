@@ -17,6 +17,7 @@ class GenerosVista{
 
     function error($error){
         $this->smarty->assign('error', $error);
+        $this->smarty->assign('volver', "Volver");
         $this->smarty->display('templates/error.tpl');
     }
 }

@@ -26,14 +26,14 @@ class GenerosController{
         header('location:' . BASE_URL);
     }
 
-    function BorrarGenero($id_genero){ 
-        $videojuegos = $this->videojuegos_model->GetVideojuegos();
-        if($videojuegos->id_genero != null){
-            $this->view->error("No se puede borrar este genero ya que tiene videojuegos dentro, borralos antes de realizar esta accion");
-        }else{
+    function BorrarGenero($id_genero){
+        if($id_genero != null){
+            $this->view->error("No se puede eliminar el genero ya que contiene juegos dentro, eliminelos y vuelva a realizar la accion");
+        }
+        if($id_genero != null){
         $this->model->EliminarGenero($id_genero);
         header("location:" . BASE_URL);
-        } 
+        }
     }
 
     function EditarGenero(){
@@ -41,7 +41,6 @@ class GenerosController{
         $id_genero = $_POST['id_genero'];
         $this->model->ActualizarGenero($genero, $id_genero);
         header("location:" . BASE_URL);
-    }
+        }
 }
-
 

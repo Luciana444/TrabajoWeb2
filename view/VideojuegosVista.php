@@ -12,7 +12,6 @@ class VideojuegosVista{
     function MostrarVideojuegos($videojuegos, $generos){
       $this->smarty->assign('titulo',"Videojuegos");
       $this->smarty->assign('seccion', 'videojuegos');
-      $this->smarty->assign('borrado', 'borrado');
       $this->smarty->assign('videojuegos', $videojuegos);
       $this->smarty->assign('generos',$generos);
       $this->smarty->assign('inicio',"inicio");
@@ -28,7 +27,6 @@ class VideojuegosVista{
   function MostrarVideojuegoPorGenero($videojuegosporgenero){
     $this->smarty->assign('titulo',"Videojuego");
     $this->smarty->assign('seccion','genero');
-    $this->smarty->assign('borrado', 'noborrado');
     $this->smarty->assign('inicio',"inicio");
     $this->smarty->assign('videojuegos', $videojuegosporgenero);
     $this->smarty->display('templates/tabla_videojuegos.tpl');

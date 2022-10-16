@@ -5,7 +5,7 @@
 	{foreach $videojuegos as $videojuego}
 		<ul>
 			<li><a href="detallejuego/{$videojuego->id}">{$videojuego->nombre}</a></li>
-			{if isset($smarty.session.USER_ID) && $borrado == "borrado"}
+			{if isset($smarty.session.USER_ID)}
 				<a href="borrarvideojuego/{$videojuego->id}" class="btn btn-outline-danger">Eliminar</a>
 			{/if}
 		</ul>
