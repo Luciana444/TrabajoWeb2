@@ -1,5 +1,9 @@
 {include file="templates/header.tpl"}
+{if $seccion == "genero"}
+<h1>Videojuego de {$titulo}</h1>
+{else}
 <h1>{$titulo}</h1>
+{/if}
 <p><a href='/web2/'>{$inicio}</a></p>
 <table>
 	{foreach $videojuegos as $videojuego}

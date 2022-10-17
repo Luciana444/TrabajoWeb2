@@ -27,7 +27,8 @@ class VideojuegosController{
 
     function VideojuegosPorGenero($id_genero){
         $videojuegosporgenero = $this->model->ConseguirVideojuegosPorGenero($id_genero);
-        $this->view->MostrarVideojuegoPorGenero($videojuegosporgenero);
+        $genero = $this->generos_model->GetGenero($id_genero);
+        $this->view->MostrarVideojuegoPorGenero($videojuegosporgenero,$genero);
     }
 
     function BorrarVideojuego($id){

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 00:25:30
+/* Smarty version 4.2.1, created on 2022-10-17 02:24:55
   from 'C:\xampp\htdocs\web2\templates\tabla_videojuegos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634c84daee3f79_10524783',
+  'unifunc' => 'content_634ca0d7b15bc5_03089364',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70cdea1d90a1fd691cdc544433edd8764bacb096' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\templates\\tabla_videojuegos.tpl',
-      1 => 1665959129,
+      1 => 1665966291,
       2 => 'file',
     ),
   ),
@@ -21,11 +21,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/header.tpl' => 1,
   ),
 ),false)) {
-function content_634c84daee3f79_10524783 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634ca0d7b15bc5_03089364 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
+if ($_smarty_tpl->tpl_vars['seccion']->value == "genero") {?>
+<h1>Videojuego de <?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
+</h1>
+<?php } else { ?>
 <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
+<?php }?>
 <p><a href='/web2/'><?php echo $_smarty_tpl->tpl_vars['inicio']->value;?>
 </a></p>
 <table>

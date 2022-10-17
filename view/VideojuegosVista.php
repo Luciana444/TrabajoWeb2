@@ -24,8 +24,8 @@ class VideojuegosVista{
     $this->smarty->display('templates/mostrarjuego.tpl');
   }
 
-  function MostrarVideojuegoPorGenero($videojuegosporgenero){
-    $this->smarty->assign('titulo',"Videojuego");
+  function MostrarVideojuegoPorGenero($videojuegosporgenero,$genero){
+    $this->smarty->assign('titulo',$genero->genero);
     $this->smarty->assign('seccion','genero');
     $this->smarty->assign('inicio',"inicio");
     $this->smarty->assign('videojuegos', $videojuegosporgenero);
