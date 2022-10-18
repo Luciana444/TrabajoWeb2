@@ -27,10 +27,7 @@ class GenerosController{
     }
 
     function BorrarGenero($id_genero){
-        if($id_genero != null){
-            $this->view->error("No se puede eliminar el genero ya que contiene juegos dentro, eliminelos y vuelva a realizar la accion");
-        }
-        if($id_genero != null){
+        $this->view->error("No se puede eliminar el genero ya que contiene juegos dentro, eliminelos y vuelva a realizar la accion");
         $this->model->EliminarGenero($id_genero);
         header("location:" . BASE_URL);
         }
@@ -42,5 +39,5 @@ class GenerosController{
         $this->model->ActualizarGenero($genero, $id_genero);
         header("location:" . BASE_URL);
         }
-}
+
 
