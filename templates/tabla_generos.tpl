@@ -15,7 +15,7 @@
 		<h2>Agrega un genero</h2>
 		<div class="col-xs-12 col-md-3">
 			<label class="form-label">Nombre del Genero</label>
-			<input type="text" class="form-control" name="genero" required>
+			<input type="text" class="form-control" name="genero">
 			<button type="submit">Agregar</button>
 		</div>
 	</form>
@@ -23,7 +23,7 @@
 		<h2>Edita un genero</h2>
 		<div class="col-xs-12 col-md-3">
 			<label class="form-label">Genero Nuevo</label>
-			<input class="form-control" name="genero" required>
+			<input class="form-control" name="genero">
 		</div>
 		<div class="col-xs-12 col-md-3">
 			<label class="form-label"> Genero que se Suplanta </label>

@@ -30,5 +30,11 @@ class VideojuegosVista{
     $this->smarty->assign('inicio',"inicio");
     $this->smarty->assign('videojuegos', $videojuegosporgenero);
     $this->smarty->display('templates/tabla_videojuegos.tpl');
+  } 
+
+    function error($error){
+      $this->smarty->assign('error', $error);
+      $this->smarty->assign('volver', "Volver");
+      $this->smarty->display('templates/error.tpl');
   }
 }
